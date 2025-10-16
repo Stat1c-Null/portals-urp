@@ -86,7 +86,7 @@ public class PortalPlacement : MonoBehaviour
             var portalUp = -Vector3.Cross(portalRight, portalForward);
 
             var portalRotation = Quaternion.LookRotation(portalForward, portalUp);
-            
+            Debug.Log(portals.Portals[portalID]);
             // Attempt to place the portal.
             bool wasPlaced = portals.Portals[portalID].PlacePortal(hit.collider, hit.point, portalRotation);
 
