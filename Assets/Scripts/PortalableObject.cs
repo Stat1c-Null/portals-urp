@@ -73,6 +73,7 @@ public class PortalableObject : MonoBehaviour
         cloneObject.SetActive(false);
 
         ++inPortalCount;
+        Debug.Log("Teleporting object");
     }
 
     public void ExitPortal(Collider wallCollider)
@@ -84,6 +85,7 @@ public class PortalableObject : MonoBehaviour
         {
             cloneObject.SetActive(false);
         }
+        Debug.Log("Exiting portal");
     }
 
     public virtual void Warp()

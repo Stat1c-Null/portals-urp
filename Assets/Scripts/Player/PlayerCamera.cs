@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCamera : MonoBehaviour
+public class PlayerCamera : PortalableObject
 {
     public Transform viewPoint;
     public float mouseSensitivity = 1f;
@@ -18,6 +18,16 @@ public class PlayerCamera : MonoBehaviour
         Cursor.visible = false;
 
         camera = Camera.main;
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
+    public override void Warp()
+    {
+        base.Warp();
     }
 
     // Update is called once per frame
@@ -56,4 +66,6 @@ public class PlayerCamera : MonoBehaviour
         camera.transform.position = viewPoint.position;
         camera.transform.rotation = viewPoint.rotation;
     }
+
+    
 }
